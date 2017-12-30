@@ -190,6 +190,9 @@ proc `/=`*(a: var BigRational, b: int | string | BigInt) =
   a.den *= initBigInt(b)
   reduce(a)
   
+proc `>` *(a: BigInt, b: int32): bool = cmp(a, b) > 0
+proc `>=` *(a: BigInt, b: int32): bool = cmp(a, b) >= 0
+  
 proc cmp*(a, b: int | string | BigInt | BigRational): BigInt =
   ## Compares two rationals.
   (a.toBigRational() - b.toBigRational()).num
@@ -223,6 +226,15 @@ proc `==` *(a, b: int | string | BigInt | BigRational): bool =
   ## big rational number or any int, big int or string that can
   ## be converted to a big rational number `b`.
   (a.toBigRational() - b.toBigRational()).num == 0
+
+proc `!=` * (a, b: int | string | BigInt | BigRational): bool =
+  ## Checks if a big rational number `a` has a value not equivalent to another
+  ## big rational number or any int, big int or string that can
+  ## be converted to a big rational number `b`.
+  if a == b:
+    result = false
+  else:
+    result = true
 
 proc abs*(a: BigRational): BigRational =
   ## Returns the absolute value of `a`.
