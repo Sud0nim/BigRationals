@@ -34,4 +34,19 @@ echo c / d # 16666666666666666666666666666666666666652020202/100677121215451
 echo d + a # 121211458932541233493/2223
 ```
 
+**Boolean Operators**
 
+```nim
+var
+  a = initBigRational("121211458858441234234", 2223)
+  b = "-11821" // -212121221
+  c = "99999999999999999999999999999999999999912121212" // "18121882"
+  d = initBigInt(99999999) // "3"
+  
+echo a < b # false
+echo b < c # true
+echo c >= d # true
+echo d <= a # true
+echo b == d # false
+echo c != d # true
+```
