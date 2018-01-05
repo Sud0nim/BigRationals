@@ -190,9 +190,6 @@ proc `/=`*(a: var BigRational, b: int | string | BigInt) =
   a.den *= initBigInt(b)
   reduce(a)
   
-proc `>` *(a: BigInt, b: int32): bool = cmp(a, b) > 0
-proc `>=` *(a: BigInt, b: int32): bool = cmp(a, b) >= 0
-  
 proc cmp*(a, b: int | string | BigInt | BigRational): BigInt =
   ## Compares two rationals.
   (a.toBigRational() - b.toBigRational()).num
