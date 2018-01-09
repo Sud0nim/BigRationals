@@ -7,7 +7,13 @@ var
   b = initBigInt(-1) // initBigInt(-2)
   m1 = initBigInt(-1) // initBigInt(1)
   tt = initBigInt(10) // initBigInt(2)
+  zz = 3 // "2873787823782378191878937683787893898802090290092"
+  yy = "289898713137837897823878238278478287478924" // 2873
 
+assert( zz < yy)
+assert( yy > zz)
+assert( yy > o)
+assert (zz < o)
 assert( a     == a )
 assert( (a - a) == z )
 assert( (a + b) == o )
